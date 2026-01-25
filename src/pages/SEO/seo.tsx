@@ -17,13 +17,6 @@ const reasons = [
   "Custom plans for local SEO, eCommerce SEO, and enterprise SEO",
 ];
 
-const stats = [
-  { label: "Clients", value: "7550+", icon: "💎" },
-  { label: "Keywords on First Page", value: "48,100+", icon: "📈" },
-  { label: "Enquiries Delivered", value: "50,12,000+", icon: "✉️" },
-  { label: "Invested Man Hours", value: "13,24,800+", icon: "👥" },
-];
-
 const sections = [
   {
     title: "What is SEO / Search Engine Optimization?",

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Lottie from "lottie-react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";

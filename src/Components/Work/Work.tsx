@@ -1,4 +1,3 @@
-import React from "react";
 import "./Work.css";
 import { IoIosAddCircle } from "react-icons/io";
 import Icon1 from "../../assets/Background+Shadow.png";
