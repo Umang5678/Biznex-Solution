@@ -9,6 +9,9 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
+  "overrides": {
+    "rollup": "4.29.1"
+  },
   "dependencies": {
     "@lottiefiles/dotlottie-react": "^0.17.13",
     "@lottiefiles/react-lottie-player": "^3.6.0",
