@@ -37,6 +37,7 @@ import WebsiteDevelopment from "./pages/webdevlopment/WebsiteDevelopment";
 import AppDevelopment from "./pages/Appdevelopment/AppDevelopment";
 import UiUxDesign from "./pages/Ui&UxDesign/ui&uxdesign";
 import Seo from "./pages/SEO/seo";
+import AboutUs from "./pages/AboutUs/aboutus";
 
 function App() {
   return (
@@ -61,6 +62,7 @@ function App() {
         <Route path="/app-development" element={<AppDevelopment />} />
         <Route path="/ui-ux-design" element={<UiUxDesign />} />
         <Route path="/seo" element={<Seo />} />
+        <Route path="/about-us" element={<AboutUs />} />
       </Routes>
     </Router>
   );

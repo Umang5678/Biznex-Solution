@@ -1,4 +1,117 @@
-import "./Footer.css";
+// import "./Footer.css";
+// import {
+//   FaFacebookF,
+//   FaTwitter,
+//   FaLinkedinIn,
+//   FaInstagram,
+// } from "react-icons/fa";
+// import logo from "../../assets/logo10.png";
+// import FooterShape from "../../assets/Footerimg.png";
+
+// const Footer = () => {
+//   return (
+//     <div className="footer-wrapper">
+//       <img src={FooterShape} alt="shape" className="footer-shape" />
+//       <footer className="footer">
+//         <div className="footer-top">
+//           <div className="footer-logo">
+//             <img src={logo} alt="Infocorpus Logo" />
+//             <p>Fueling Your Brand’s Brilliance</p>
+//           </div>
+
+//           <div className="footer-links">
+//             {[
+//               {
+//                 title: "Software Engineering",
+//                 items: [
+//                   "Software Development",
+//                   "Web Design",
+//                   "Mobile App Development",
+//                   "Ui-Ux Design",
+//                   "SEO Optimization",
+//                   "Digital Marketing Service",
+//                 ],
+//               },
+//               {
+//                 title: "Application Development",
+//                 items: [
+//                   "Web Design",
+//                   "Mobile App Development",
+//                   "Ui-Ux Design",
+//                   "SEO Optimization",
+//                   "Digital Marketing Service",
+//                 ],
+//               },
+//               {
+//                 title: "Generative AI Solutions",
+//                 items: [
+//                   "Web Design",
+//                   "Mobile App Development",
+//                   "Ui-Ux Design",
+//                   "SEO Optimization",
+//                   "Digital Marketing Service",
+//                 ],
+//               },
+//               {
+//                 title: "For Company",
+//                 items: [
+//                   "Web Design",
+//                   "Mobile App Development",
+//                   "Ui-Ux Design",
+//                   "SEO Optimization",
+//                   "Digital Marketing Service",
+//                 ],
+//               },
+//             ].map((column, index) => (
+//               <div key={index} className="footer-column">
+//                 <h4>{column.title}</h4>
+//                 <ul>
+//                   {column.items.map((item, idx) => (
+//                     <li key={idx}>{item}</li>
+//                   ))}
+//                 </ul>
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+
+//         <div className="footer-bottom">
+//           <div className="footer-left">
+//             <p
+//               className="pp
+//             "
+//             >
+//               © 2010–2025 Infocorpus solution Private Limited.
+//             </p>
+//             <a className="pp2" href="#">
+//               Privacy Policy
+//             </a>
+//             <a className="pp2" href="#">
+//               Terms of Service
+//             </a>
+//           </div>
+//           <div className="footer-socials">
+//             <a href="#">
+//               <FaFacebookF />
+//             </a>
+//             <a href="#">
+//               <FaTwitter />
+//             </a>
+//             <a href="#">
+//               <FaInstagram />
+//             </a>
+//             <a href="#">
+//               <FaLinkedinIn />
+//             </a>
+//           </div>
+//         </div>
+//       </footer>
+//     </div>
+//   );
+// };
+
+// export default Footer;
+
 import {
   FaFacebookF,
   FaTwitter,
@@ -6,108 +119,136 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 import logo from "../../assets/logo10.png";
-import FooterShape from "../../assets/Footerimg.png";
+
+type LinkItem = { label: string; href: string };
 
 const Footer = () => {
+  const quickLinks: LinkItem[] = [
+    { label: "Home", href: "/" },
+    { label: "About", href: "/about" },
+    { label: "Our Work", href: "/work" },
+    { label: "Contact", href: "/contact" },
+  ];
+
+  const services: LinkItem[] = [
+    { label: "Web Development", href: "#" },
+    { label: "Mobile App Development", href: "#" },
+    { label: "UI/UX Design", href: "#" },
+    { label: "SEO Optimization", href: "#" },
+    { label: "Digital Marketing", href: "#" },
+  ];
+
+  const company: LinkItem[] = [
+    { label: "Privacy Policy", href: "#" },
+    { label: "Terms of Service", href: "#" },
+    { label: "Support", href: "#" },
+  ];
+
+  const socials = [
+    { Icon: FaFacebookF, href: "#", label: "Facebook" },
+    { Icon: FaTwitter, href: "#", label: "Twitter" },
+    { Icon: FaInstagram, href: "#", label: "Instagram" },
+    { Icon: FaLinkedinIn, href: "#", label: "LinkedIn" },
+  ];
+
   return (
-    <div className="footer-wrapper">
-      <img src={FooterShape} alt="shape" className="footer-shape" />
-      <footer className="footer">
-        <div className="footer-top">
-          <div className="footer-logo">
-            <img src={logo} alt="Infocorpus Logo" />
-            <p>Fueling Your Brand’s Brilliance</p>
+    <footer className="relative mt-16 overflow-hidden bg-[#070A12] text-slate-200">
+      {/* premium glow */}
+
+      <div className="relative mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        {/* Top */}
+        <div className="grid gap-10 lg:grid-cols-12">
+          {/* Brand */}
+          <div className="lg:col-span-4">
+            <div className="flex items-center gap-3">
+              <img
+                src={logo}
+                alt="Logo"
+                className="h-11 w-11 rounded-xl border border-white/10 bg-white/5 p-1"
+              />
+
+              <p className="text-sm text-slate-300">
+                Fueling Your Brand’s Brilliance
+              </p>
+            </div>
+
+            <p className="mt-4 max-w-md text-sm leading-relaxed text-slate-300">
+              We build premium websites, mobile apps, and digital solutions with
+              modern UI/UX, performance, and SEO-first strategy.
+            </p>
+
+            {/* Socials */}
+            <div className="mt-5 flex gap-3">
+              {socials.map(({ Icon, href, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  aria-label={label}
+                  className="group inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slate-200 shadow-sm transition hover:-translate-y-0.5 hover:border-indigo-500/40 hover:bg-indigo-500/10 hover:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/30"
+                >
+                  <Icon className="text-base opacity-90 group-hover:opacity-100" />
+                </a>
+              ))}
+            </div>
           </div>
 
-          <div className="footer-links">
-            {[
-              {
-                title: "Software Engineering",
-                items: [
-                  "Software Development",
-                  "Web Design",
-                  "Mobile App Development",
-                  "Ui-Ux Design",
-                  "SEO Optimization",
-                  "Digital Marketing Service",
-                ],
-              },
-              {
-                title: "Application Development",
-                items: [
-                  "Web Design",
-                  "Mobile App Development",
-                  "Ui-Ux Design",
-                  "SEO Optimization",
-                  "Digital Marketing Service",
-                ],
-              },
-              {
-                title: "Generative AI Solutions",
-                items: [
-                  "Web Design",
-                  "Mobile App Development",
-                  "Ui-Ux Design",
-                  "SEO Optimization",
-                  "Digital Marketing Service",
-                ],
-              },
-              {
-                title: "For Company",
-                items: [
-                  "Web Design",
-                  "Mobile App Development",
-                  "Ui-Ux Design",
-                  "SEO Optimization",
-                  "Digital Marketing Service",
-                ],
-              },
-            ].map((column, index) => (
-              <div key={index} className="footer-column">
-                <h4>{column.title}</h4>
-                <ul>
-                  {column.items.map((item, idx) => (
-                    <li key={idx}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+          {/* Columns */}
+          <div className="lg:col-span-8">
+            <div className="grid gap-8 sm:grid-cols-3">
+              <FooterCol title="Quick Links" items={quickLinks} />
+              <FooterCol title="Services" items={services} />
+              <FooterCol title="Company" items={company} />
+            </div>
           </div>
         </div>
 
-        <div className="footer-bottom">
-          <div className="footer-left">
-            <p
-              className="pp
-            "
+        {/* Divider */}
+        <div className="my-10 h-px w-full bg-white/10" />
+
+        {/* Bottom */}
+        <div className="flex flex-col gap-4 text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            © 2010–2025 Biznex Solution Private Limited. All rights reserved.
+          </p>
+
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
+            <a
+              href="#"
+              className="transition hover:text-white hover:underline hover:underline-offset-4"
             >
-              © 2010–2025 Infocorpus solution Private Limited.
-            </p>
-            <a className="pp2" href="#">
               Privacy Policy
             </a>
-            <a className="pp2" href="#">
+            <a
+              href="#"
+              className="transition hover:text-white hover:underline hover:underline-offset-4"
+            >
               Terms of Service
             </a>
           </div>
-          <div className="footer-socials">
-            <a href="#">
-              <FaFacebookF />
-            </a>
-            <a href="#">
-              <FaTwitter />
-            </a>
-            <a href="#">
-              <FaInstagram />
-            </a>
-            <a href="#">
-              <FaLinkedinIn />
-            </a>
-          </div>
         </div>
-      </footer>
-    </div>
+      </div>
+    </footer>
   );
 };
 
 export default Footer;
+
+function FooterCol({ title, items }: { title: string; items: LinkItem[] }) {
+  return (
+    <div>
+      <p className="text-sm font-semibold text-white">{title}</p>
+      <ul className="mt-4 space-y-3">
+        {items.map((it) => (
+          <li key={it.label}>
+            <a
+              href={it.href}
+              className="text-sm text-slate-300 transition hover:text-white"
+            >
+              {it.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import onPageImg from "../../../src/assets/11.png";
 import auditImg from "../../../src/assets/12.png";
 import updatesImg from "../../../src/assets/13.png";
@@ -51,6 +51,9 @@ const services = [
 ];
 
 const SeoOptimizationPage: React.FC = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   return (
     <section className="relative overflow-hidden bg-white">
       {/* Primary blur background (light mode) */}

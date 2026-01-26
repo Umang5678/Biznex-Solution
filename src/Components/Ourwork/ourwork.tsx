@@ -1,136 +1,190 @@
+import { useMemo, useState } from "react";
 import Footer from "../Footer/Footer";
-import "./ourwork.css";
-import { useState } from "react";
+import App4 from "../../assets/thedreamchapter.jpeg";
+import App5 from "../../assets/thecrafistore.jpeg";
+
+type Category = "all" | "web" | "mobile" | "branding";
 
 interface Project {
   id: number;
   title: string;
-  category: "web" | "mobile" | "branding";
-  image: string;
+  category: Exclude<Category, "all">;
+  img: string;
   description: string;
   link: string;
 }
-const WorkPage = () => {
-  const [activeCategory, setActiveCategory] = useState<
-    "all" | "web" | "mobile" | "branding"
-  >("all");
 
-  const projects: Project[] = [
-    {
-      id: 1,
-      title: "Portfolio Website",
-      category: "web",
-      image: "https://via.placeholder.com/300x200?text=Web+Project+1",
-      description: "A modern responsive portfolio website.",
-      link: "https://thecrafistore.com",
-    },
-    {
-      id: 2,
-      title: "E-commerce App",
-      category: "mobile",
-      image: "https://via.placeholder.com/300x200?text=Mobile+App+1",
-      description: "A complete shopping app for Android and iOS.",
-      link: "https://thecrafistore.com",
-    },
-    {
-      id: 3,
-      title: "Logo Design",
-      category: "branding",
-      image: "https://via.placeholder.com/300x200?text=Branding+1",
-      description: "Creative logo for tech startup.",
-      link: "https://thecrafistore.com",
-    },
-    {
-      id: 4,
-      title: "Business Website",
-      category: "web",
-      image: "https://via.placeholder.com/300x200?text=Web+Project+2",
-      description: "Corporate website for business.",
-      link: "https://thecrafistore.com",
-    },
-    {
-      id: 5,
-      title: "App UI Design",
-      category: "mobile",
-      image: "https://via.placeholder.com/300x200?text=Mobile+App+2",
-      description: "Modern mobile app UI design.",
-      link: "https://thecrafistore.com",
-    },
-    {
-      id: 6,
-      title: "App UI Design",
-      category: "mobile",
-      image: "https://via.placeholder.com/300x200?text=Mobile+App+2",
-      description: "Modern mobile app UI design.",
-      link: "https://thecrafistore.com",
-    },
-  ];
-  const filteredProjects =
-    activeCategory === "all"
-      ? projects
-      : projects.filter((p) => p.category === activeCategory);
+const categories: { key: Category; label: string }[] = [
+  { key: "all", label: "All" },
+  { key: "web", label: "Web" },
+  { key: "mobile", label: "Mobile App" },
+  { key: "branding", label: "Branding" },
+];
+
+const projectsData: Project[] = [
+  {
+    id: 1,
+    title: "The Crafistore",
+    category: "web",
+    img: App4,
+    description: "A modern responsive portfolio website.",
+    link: "https://thecrafistore.com",
+  },
+  {
+    id: 2,
+    title: "The Dream Chapter",
+    category: "mobile",
+    img: App5,
+    description: "A complete shopping app for Android and iOS.",
+    link: "https://the-dream-chapters.vercel.app",
+  },
+  {
+    id: 3,
+    title: "Logo Design",
+    category: "branding",
+    img: "https://via.placeholder.com/900x600?text=Branding+1",
+    description: "Creative logo for tech startup.",
+    link: "https://thecrafistore.com",
+  },
+  {
+    id: 4,
+    title: "Business Website",
+    category: "web",
+    img: "https://via.placeholder.com/900x600?text=Web+Project+2",
+    description: "Corporate website for business.",
+    link: "https://the-dream-chapters.vercel.app",
+  },
+  {
+    id: 5,
+    title: "App UI Design",
+    category: "mobile",
+    img: "https://via.placeholder.com/900x600?text=Mobile+App+2",
+    description: "Modern mobile app UI design.",
+    link: "https://thecrafistore.com",
+  },
+  {
+    id: 6,
+    title: "Brand Identity",
+    category: "branding",
+    img: "https://via.placeholder.com/900x600?text=Branding+2",
+    description: "Brand identity kit for a growing company.",
+    link: "https://thecrafistore.com",
+  },
+];
+
+export default function WorkPage() {
+  const [activeCategory, setActiveCategory] = useState<Category>("all");
+
+  const filteredProjects = useMemo(() => {
+    if (activeCategory === "all") return projectsData;
+    return projectsData.filter((p) => p.category === activeCategory);
+  }, [activeCategory]);
 
   return (
     <>
-      <div className="work-container">
-        <section className="work-header">
-          <h2>
-            Our <span>Works</span>
+      <section className="mx-auto w-full max-w-7xl px-4 pb-14 pt-12 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center">
+          <p className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-semibold text-slate-700 shadow-sm">
+            <span className="h-2 w-2 rounded-full bg-indigo-600" />
+            Our Portfolio
+          </p>
+
+          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
+            Our <span className="text-indigo-600">Works</span>
           </h2>
-          <div className="underline"></div>
-        </section>
-        <h3 className="work-text">
-          Our work is distinguished amongst wide variety. Below are few of our
-          websites which may help you to trust us better.
-        </h3>
-      </div>
 
-      <div className="project-tabs">
-        {["all", "web", "mobile", "branding"].map((cat) => (
-          <button
-            key={cat}
-            className={`tab-btn ${activeCategory === cat ? "active" : ""}`}
-            onClick={() => setActiveCategory(cat as any)}
-          >
-            {cat === "all"
-              ? "All"
-              : cat === "web"
-              ? "Web"
-              : cat === "mobile"
-              ? "Mobile App"
-              : "Branding"}
-          </button>
-        ))}
-      </div>
+          <p className="mx-auto mt-3 max-w-3xl text-sm leading-relaxed text-slate-600 sm:text-base">
+            Our work is distinguished amongst a wide variety. Below are a few of
+            our projects which may help you trust us better.
+          </p>
+        </div>
 
-      <div className="projects-grid">
-        {filteredProjects.map((project) => (
-          <div className="project-card" key={project.id}>
-            <img
-              src={project.image}
-              alt={project.title}
-              className="project-img"
-            />
-            <div className="overlay">
-              <h3>{project.title}</h3>
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="visit-btn"
+        {/* Tabs */}
+        <div className="mt-8 flex flex-wrap justify-center gap-2 sm:gap-3">
+          {categories.map((c) => {
+            const active = activeCategory === c.key;
+
+            return (
+              <button
+                key={c.key}
+                type="button"
+                onClick={() => setActiveCategory(c.key)}
+                className={[
+                  "rounded-full px-4 py-2 text-sm font-semibold transition",
+                  "border",
+                  active
+                    ? "border-indigo-600 bg-indigo-600 text-white shadow-sm"
+                    : "border-slate-200 bg-white text-slate-700 hover:border-slate-300 hover:bg-slate-50",
+                  "focus:outline-none focus:ring-2 focus:ring-indigo-500/30",
+                ].join(" ")}
               >
-                Visit →
-              </a>
-            </div>
-          </div>
-        ))}
-      </div>
+                {c.label}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Grid */}
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {filteredProjects.map((project) => (
+            <article
+              key={project.id}
+              className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg"
+            >
+              {/* Image (NOT clickable now) */}
+              <div className="relative aspect-[16/11] w-full overflow-hidden bg-slate-100">
+                <img
+                  src={project.img}
+                  alt={project.title}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.05]"
+                />
+
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent opacity-80" />
+
+                <div className="absolute left-4 top-4">
+                  <span className="rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-slate-900 backdrop-blur">
+                    {project.category}
+                  </span>
+                </div>
+
+                <div className="absolute inset-x-0 bottom-0 p-4">
+                  <h3 className="text-lg font-semibold text-white drop-shadow-sm">
+                    {project.title}
+                  </h3>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-5">
+                <p className="text-sm text-slate-600">{project.description}</p>
+
+                <div className="mt-4 flex items-center justify-end">
+                  {/* ONLY Visit opens url */}
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900/30"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    Visit{" "}
+                    <span className="ml-2 transition group-hover:translate-x-0.5">
+                      →
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <Footer />
     </>
   );
-};
-
-export default WorkPage;
+}
 
 // import React, { useState } from "react";
 // import "./ourwork.css";

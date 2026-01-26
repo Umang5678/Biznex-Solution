@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import heroAppImg from "../../../src/assets/app1.png";
 import appDevImg from "../../../src/assets/seo11.png";
 import appDevImg1 from "../../../src/assets/mob3.png";
@@ -92,6 +92,9 @@ const tech = [
 ];
 
 const MobileDevelopmentPage: React.FC = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   return (
     <section className="relative overflow-hidden bg-white">
       {/* Primary blur background (light mode) */}

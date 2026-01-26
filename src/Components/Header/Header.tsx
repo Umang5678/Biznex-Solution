@@ -32,7 +32,7 @@ const Header: React.FC = () => {
               </Link>
             </li>
             <li>
-              <Link to="/about" onClick={() => setMenuOpen(false)}>
+              <Link to="/about-us" onClick={() => setMenuOpen(false)}>
                 About Us
               </Link>
             </li>
