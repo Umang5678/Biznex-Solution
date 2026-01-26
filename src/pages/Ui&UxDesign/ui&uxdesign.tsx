@@ -79,15 +79,6 @@ const process = [
   },
 ];
 
-const deliverables = [
-  { title: "Figma File", desc: "Organized pages, components, and styles." },
-  { title: "Wireframes", desc: "Low/High fidelity based on project stage." },
-  { title: "Prototype", desc: "Clickable flow for testing and approval." },
-  { title: "Design System", desc: "Tokens + components for consistency." },
-  { title: "Assets", desc: "Icons/images exported and ready for dev." },
-  { title: "Specs", desc: "Spacing, sizes, states, and interactions." },
-];
-
 const focusAreas = [
   {
     title: "Clarity & Usability",
