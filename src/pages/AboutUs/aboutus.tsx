@@ -10,6 +10,8 @@ import {
 import Footer from "../../Components/Footer/Footer";
 import aboutImg from "../../assets/about-us.webp"; // change your image
 import { CheckCircle2, ArrowRight } from "lucide-react";
+import { useEffect } from "react";
+import { useNavigate } from "react-router";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
@@ -71,6 +73,12 @@ const FEATURES = [
 ];
 
 export default function AboutPage() {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
+  const navigate = useNavigate();
+
   return (
     <>
       <main className="bg-white">
@@ -272,15 +280,16 @@ export default function AboutPage() {
 
             {/* Center button (like screenshot) */}
             <div className="mt-8 flex justify-center">
-              <motion.a
-                href="#contact"
+              <motion.button
+                type="button"
+                onClick={() => navigate("/contact-us")}
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.98 }}
                 className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500/40"
               >
                 Contact Us Today
                 <ArrowRight className="h-4 w-4" />
-              </motion.a>
+              </motion.button>
             </div>
           </motion.div>
         </section>

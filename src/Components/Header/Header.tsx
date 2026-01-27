@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import "./Header.css";
 import Frame from "../../assets/logo7.png";
-
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
-
+  const navigate = useNavigate();
   const toggleMenu = () => setMenuOpen((prev) => !prev);
 
   return (
@@ -36,72 +36,6 @@ const Header: React.FC = () => {
                 About Us
               </Link>
             </li>
-            {/* <li
-              className="dropdown"
-              onMouseEnter={() => setServicesOpen(true)}
-              onMouseLeave={() => setServicesOpen(false)}
-            >
-              <span className="dropdown-toggle">Services ▾</span>
-              {servicesOpen && (
-                <ul className="dropdown-menu">
-                  <li>
-                    <Link
-                      to="/website-development"
-                      onClick={() => {
-                        setMenuOpen(false);
-                        setServicesOpen(false);
-                      }}
-                    >
-                      Web Design
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/services/mobile-app"
-                      onClick={() => {
-                        setMenuOpen(false);
-                        setServicesOpen(false);
-                      }}
-                    >
-                      Mobile App Development
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/services/ui-ux"
-                      onClick={() => {
-                        setMenuOpen(false);
-                        setServicesOpen(false);
-                      }}
-                    >
-                      UI/UX Design
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/services/seo"
-                      onClick={() => {
-                        setMenuOpen(false);
-                        setServicesOpen(false);
-                      }}
-                    >
-                      SEO Optimization
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/services/digital-marketing"
-                      onClick={() => {
-                        setMenuOpen(false);
-                        setServicesOpen(false);
-                      }}
-                    >
-                      Digital Marketing Service
-                    </Link>
-                  </li>
-                </ul>
-              )}
-            </li> */}
 
             <li
               className="dropdown"
@@ -188,7 +122,7 @@ const Header: React.FC = () => {
               </Link>
             </li>
             <li>
-              <Link to="/contact" onClick={() => setMenuOpen(false)}>
+              <Link to="/contact-us" onClick={() => setMenuOpen(false)}>
                 Contact Us
               </Link>
             </li>
@@ -196,7 +130,10 @@ const Header: React.FC = () => {
 
           {/* Mobile CTA */}
           <div className="mobile-cta">
-            <button className="get-in-touch">
+            <button
+              onClick={() => navigate("/contact-us")}
+              className="get-in-touch"
+            >
               Get in Touch →{/* <GrFormNextLink className="arrow-icon" /> */}
             </button>
           </div>
@@ -204,7 +141,10 @@ const Header: React.FC = () => {
 
         {/* Desktop CTA */}
         <div className="header__cta">
-          <button className="get-in-touch">
+          <button
+            onClick={() => navigate("/contact-us")}
+            className="get-in-touch"
+          >
             Get in Touch →{/* <GrFormNextLink className="arrow-icon" /> */}
           </button>
         </div>

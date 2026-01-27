@@ -1,7 +1,7 @@
 import React from "react";
 import { GrFormNextLink } from "react-icons/gr";
 import { ShieldCheck } from "lucide-react"; // ✅ nice icon for bullets
-
+import { useNavigate } from "react-router-dom";
 import App1 from "../../assets/ui-ux-design.jpg";
 import App2 from "../../assets/mob1.png";
 import App3 from "../../assets/godud.png";
@@ -15,6 +15,7 @@ type Item = {
   title: string;
   desc: string;
   img: string;
+  route: string;
 };
 
 const items: Item[] = [
@@ -23,24 +24,28 @@ const items: Item[] = [
     title: "Modern Website Design That Converts Visitors",
     desc: "Clean, responsive UI/UX with fast performance—built to showcase your brand and drive leads or sales.",
     img: App1,
+    route: "/website-development",
   },
   {
     badge: "MOBLIE APP DEVELOPMENT",
     title: "High-Performance Mobile Apps for iOS & Android",
     desc: "Custom mobile apps with smooth UX, secure APIs, and scalable architecture—ready for growth and updates.",
     img: App2,
+    route: "/app-development",
   },
   {
     badge: "SEARCH ENGINE OPTIMIZATION",
     title: "SEO That Improves Rankings and Organic Traffic",
     desc: "On-page, technical SEO, and content strategy to boost visibility, rankings, and qualified leads over time.",
     img: App3,
+    route: "/seo",
   },
   {
     badge: "DIGITAL MARKETING",
     title: "Digital Marketing That Generates Quality Leads",
     desc: "Targeted ads, social campaigns, and analytics-driven strategy to increase reach, engagement, and conversions.",
     img: App4,
+    route: "/website-design",
   },
 ];
 
@@ -51,6 +56,7 @@ const highlights = [
 ];
 
 const OtherApp: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <section className="bg-[#F6F8FF]">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
@@ -91,6 +97,7 @@ const OtherApp: React.FC = () => {
                 {/* CTA BUTTON */}
                 <button
                   type="button"
+                  onClick={() => navigate(x.route)}
                   className="
                     absolute bottom-5
                     h-12 w-12 rounded-full bg-indigo-500 text-white shadow-sm
@@ -163,6 +170,7 @@ const OtherApp: React.FC = () => {
             {/* ✅ Button */}
             <button
               type="button"
+              onClick={() => navigate("/about-us")}
               className="mt-8 inline-flex items-center justify-center gap-2 rounded-xl border border-indigo-200 bg-white px-6 py-3 text-sm font-semibold text-slate-900 shadow-sm transition hover:bg-indigo-50"
             >
               View more about us <GrFormNextLink className="h-6 w-6" />

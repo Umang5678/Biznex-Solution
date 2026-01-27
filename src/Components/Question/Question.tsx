@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import ConsultantImg from "../../assets/img.png"; // background overlay image
 import BgPattern from "../../assets/Backgroundimg.png"; // right-side illustration
@@ -34,6 +35,7 @@ const faqs: FAQItem[] = [
 
 const Question: React.FC = () => {
   const [openFAQ, setOpenFAQ] = useState<number | null>(0);
+  const navigate = useNavigate();
 
   const toggleFAQ = (i: number) => {
     setOpenFAQ((prev) => (prev === i ? null : i));
@@ -168,11 +170,17 @@ const Question: React.FC = () => {
                 </p>
 
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                  <button className="rounded-xl bg-[#14F0C9] px-6 py-3 text-sm font-semibold text-white hover:brightness-95">
+                  <button
+                    onClick={() => navigate("/contact-us")}
+                    className="rounded-xl bg-[#14F0C9] px-6 py-3 text-sm font-semibold text-white hover:brightness-95"
+                  >
                     Get In Touch
                   </button>
 
-                  <button className="rounded-xl border border-white/90 bg-transparent px-6 py-3 text-sm font-semibold text-white hover:bg-white/10">
+                  <button
+                    onClick={() => navigate("/services")}
+                    className="rounded-xl border border-white/90 bg-transparent px-6 py-3 text-sm font-semibold text-white hover:bg-white/10"
+                  >
                     View Services
                   </button>
                 </div>

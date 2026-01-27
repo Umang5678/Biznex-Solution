@@ -1,7 +1,9 @@
 import { useMemo, useState } from "react";
 import Footer from "../Footer/Footer";
-import App4 from "../../assets/thedreamchapter.jpeg";
-import App5 from "../../assets/thecrafistore.jpeg";
+import App1 from "../../assets/thecrafistore.png";
+import App2 from "../../assets/thedreamchapter.jpeg";
+import App3 from "../../assets/Allcast.png";
+import App4 from "../../assets/pp.png";
 
 type Category = "all" | "web" | "mobile" | "branding";
 
@@ -26,33 +28,33 @@ const projectsData: Project[] = [
     id: 1,
     title: "The Crafistore",
     category: "web",
-    img: App4,
-    description: "A modern responsive portfolio website.",
+    img: App1,
+    description: "A complete shopping app for Android and iOS",
     link: "https://thecrafistore.com",
   },
   {
     id: 2,
     title: "The Dream Chapter",
     category: "mobile",
-    img: App5,
+    img: App2,
     description: "A complete shopping app for Android and iOS.",
     link: "https://the-dream-chapters.vercel.app",
   },
   {
     id: 3,
-    title: "Logo Design",
-    category: "branding",
-    img: "https://via.placeholder.com/900x600?text=Branding+1",
+    title: "allcastengineering",
+    category: "web",
+    img: App3,
     description: "Creative logo for tech startup.",
-    link: "https://thecrafistore.com",
+    link: "https://allcastengineering.com",
   },
   {
     id: 4,
-    title: "Business Website",
+    title: "perfecttoolsindustries",
     category: "web",
-    img: "https://via.placeholder.com/900x600?text=Web+Project+2",
+    img: App4,
     description: "Corporate website for business.",
-    link: "https://the-dream-chapters.vercel.app",
+    link: "https://www.perfecttoolsindustries.com/",
   },
   {
     id: 5,
