@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import Footer from "../Footer/Footer";
 import App1 from "../../assets/thecrafistore.png";
 import App2 from "../../assets/thedreamchapter.jpeg";
@@ -81,6 +81,10 @@ export default function WorkPage() {
     if (activeCategory === "all") return projectsData;
     return projectsData.filter((p) => p.category === activeCategory);
   }, [activeCategory]);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   return (
     <>

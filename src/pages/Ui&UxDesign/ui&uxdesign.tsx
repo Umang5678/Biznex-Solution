@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
+import Footer from "../../Components/Footer/Footer";
 
 const services = [
   {
@@ -443,6 +444,7 @@ const UiUxDesignPage: React.FC = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 };

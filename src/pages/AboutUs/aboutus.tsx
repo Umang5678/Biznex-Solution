@@ -120,18 +120,6 @@ export default function AboutPage() {
                 We build modern websites, mobile apps, SEO, and branding that
                 helps businesses grow faster.
               </motion.p>
-
-              <motion.div
-                variants={fadeUp}
-                className="mt-7 flex flex-wrap gap-3"
-              >
-                <a
-                  href="#contact"
-                  className="inline-flex items-center justify-center rounded-xl bg-indigo-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500/40"
-                >
-                  Contact Us Today →
-                </a>
-              </motion.div>
             </motion.div>
 
             {/* Right image */}

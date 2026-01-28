@@ -118,6 +118,7 @@ import {
   FaLinkedinIn,
   FaInstagram,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import logo from "../../assets/logo10.png";
 
 type LinkItem = { label: string; href: string };
@@ -125,23 +126,23 @@ type LinkItem = { label: string; href: string };
 const Footer = () => {
   const quickLinks: LinkItem[] = [
     { label: "Home", href: "/" },
-    { label: "About", href: "/about" },
-    { label: "Our Work", href: "/work" },
-    { label: "Contact", href: "/contact" },
+    { label: "About", href: "/about-us" },
+    { label: "Our Work", href: "/workpage" },
+    { label: "Contact", href: "/contact-us" },
   ];
 
   const services: LinkItem[] = [
-    { label: "Web Development", href: "#" },
-    { label: "Mobile App Development", href: "#" },
-    { label: "UI/UX Design", href: "#" },
-    { label: "SEO Optimization", href: "#" },
-    { label: "Digital Marketing", href: "#" },
+    { label: "Web Development", href: "/website-development" },
+    { label: "Mobile App Development", href: "/app-development" },
+    { label: "UI/UX Design", href: "/ui-ux-design" },
+    { label: "SEO Optimization", href: "/Seo" },
+    { label: "Digital Marketing", href: "/services/digital-marketing" },
   ];
 
   const company: LinkItem[] = [
-    { label: "Privacy Policy", href: "#" },
-    { label: "Terms of Service", href: "#" },
-    { label: "Support", href: "#" },
+    { label: "Privacy Policy", href: "/privacy-policy" },
+    { label: "Terms of Service", href: "/terms" },
+    { label: "Support", href: "/support" },
   ];
 
   const socials = [
@@ -153,8 +154,6 @@ const Footer = () => {
 
   return (
     <footer className="relative mt-16 overflow-hidden bg-[#070A12] text-slate-200">
-      {/* premium glow */}
-
       <div className="relative mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         {/* Top */}
         <div className="grid gap-10 lg:grid-cols-12">
@@ -163,10 +162,9 @@ const Footer = () => {
             <div className="flex items-center gap-3">
               <img
                 src={logo}
-                alt="Logo"
+                alt="UByte Solutions Logo"
                 className="h-11 w-11 rounded-xl border border-white/10 bg-white/5 p-1"
               />
-
               <p className="text-sm text-slate-300">
                 Fueling Your Brand’s Brilliance
               </p>
@@ -177,14 +175,16 @@ const Footer = () => {
               modern UI/UX, performance, and SEO-first strategy.
             </p>
 
-            {/* Socials */}
+            {/* Socials (external → keep <a>) */}
             <div className="mt-5 flex gap-3">
               {socials.map(({ Icon, href, label }) => (
                 <a
                   key={label}
                   href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={label}
-                  className="group inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slate-200 shadow-sm transition hover:-translate-y-0.5 hover:border-indigo-500/40 hover:bg-indigo-500/10 hover:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/30"
+                  className="group inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slate-200 transition hover:-translate-y-0.5 hover:border-indigo-500/40 hover:bg-indigo-500/10 hover:text-white"
                 >
                   <Icon className="text-base opacity-90 group-hover:opacity-100" />
                 </a>
@@ -207,23 +207,21 @@ const Footer = () => {
 
         {/* Bottom */}
         <div className="flex flex-col gap-4 text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between">
-          <p>
-            © 2010–2025 Biznex Solution Private Limited. All rights reserved.
-          </p>
+          <p>© 2025 UByte Solutions Private Limited. All rights reserved.</p>
 
           <div className="flex flex-wrap gap-x-6 gap-y-2">
-            <a
-              href="#"
+            <Link
+              to="/privacy-policy"
               className="transition hover:text-white hover:underline hover:underline-offset-4"
             >
               Privacy Policy
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/terms"
               className="transition hover:text-white hover:underline hover:underline-offset-4"
             >
               Terms of Service
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -233,6 +231,8 @@ const Footer = () => {
 
 export default Footer;
 
+/* ---------------- Footer Column ---------------- */
+
 function FooterCol({ title, items }: { title: string; items: LinkItem[] }) {
   return (
     <div>
@@ -240,12 +240,12 @@ function FooterCol({ title, items }: { title: string; items: LinkItem[] }) {
       <ul className="mt-4 space-y-3">
         {items.map((it) => (
           <li key={it.label}>
-            <a
-              href={it.href}
+            <Link
+              to={it.href}
               className="text-sm text-slate-300 transition hover:text-white"
             >
               {it.label}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
