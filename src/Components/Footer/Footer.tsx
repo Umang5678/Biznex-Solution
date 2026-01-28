@@ -119,7 +119,7 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import logo from "../../assets/logo10.png";
+import logo from "../../assets/u-logo.png";
 
 type LinkItem = { label: string; href: string };
 
