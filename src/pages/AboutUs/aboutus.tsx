@@ -75,6 +75,7 @@ const FEATURES = [
 export default function AboutPage() {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+    document.title = "About Us | UByte Solution";
   }, []);
 
   const navigate = useNavigate();
@@ -110,7 +111,7 @@ export default function AboutPage() {
                 className="mt-5 text-3xl font-semibold leading-tight tracking-tight text-slate-900 sm:text-4xl lg:text-5xl"
               >
                 Unveiling the Story Behind{" "}
-                <span className="text-indigo-600">Biznex Solution</span>
+                <span className="text-indigo-600">Ubyte Solution</span>
               </motion.h1>
 
               <motion.p

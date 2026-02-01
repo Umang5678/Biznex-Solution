@@ -130,21 +130,20 @@ const OtherApp: React.FC = () => {
           <div className="lg:pl-4">
             <div className="inline-flex items-center gap-3 text-xs font-semibold tracking-widest text-indigo-600">
               <span className="h-2 w-2 rounded-full bg-indigo-600" />
-              About Biznex Solution
+              About Ubyte Solution
               <span className="h-2 w-2 rounded-full bg-indigo-600" />
             </div>
 
             <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
               Discover the{" "}
-              <span className="text-indigo-500">Story and Vision</span> of
-              Biznex
+              <span className="text-indigo-500">Story and Vision</span> of Ubyte
             </h2>
 
             <p className="mt-4 text-sm leading-relaxed text-slate-600 sm:text-base">
-              Welcome to Biznex Solution, your one-stop solution for IT
-              services. From attractive website design and development to
-              powerful marketing strategies and SEO solutions, we help
-              businesses succeed in the digital world.
+              Welcome to Ubyte Solution, your one-stop solution for IT services.
+              From attractive website design and development to powerful
+              marketing strategies and SEO solutions, we help businesses succeed
+              in the digital world.
             </p>
 
             <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">

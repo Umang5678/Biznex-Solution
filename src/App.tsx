@@ -39,6 +39,8 @@ import UiUxDesign from "./pages/Ui&UxDesign/ui&uxdesign";
 import Seo from "./pages/SEO/seo";
 import AboutUs from "./pages/AboutUs/aboutus";
 import ContactUs from "./pages/ContactUs/contactus";
+import Technologies from "./pages/TechStack/TechStack";
+// import DigitalMarketing from "./pages/DigitalMarketing/DigitalMarketing";
 
 function App() {
   return (
@@ -65,6 +67,8 @@ function App() {
         <Route path="/seo" element={<Seo />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/technologies" element={<Technologies />} />
+        {/* <Route path="/digitalmarketing" element={<DigitalMarketing />} /> */}
       </Routes>
     </Router>
   );

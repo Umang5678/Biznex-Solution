@@ -25,7 +25,7 @@ const Work = () => {
               <IoIosAddCircle className="badge-icon" />
             </div>
 
-            <div className="p1">More than 100 finished projects</div>
+            <div className="p1">More than 50 finished projects</div>
           </span>
         </div>
 
@@ -36,7 +36,9 @@ const Work = () => {
           Every element guides users and delivers results. We design websites
           that turn visitors into customers.
         </p>
-        <button className="work-button">See Our Work</button>
+        <button className="bg-indigo-600 text-white px-7 py-3 rounded-lg font-medium text-base transition hover:bg-indigo-500">
+          See Our Work
+        </button>
       </div>
     </section>
   );

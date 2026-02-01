@@ -56,7 +56,7 @@ const Question: React.FC = () => {
               </div>
 
               <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
-                Biznex’s <span className="text-indigo-500">Informative</span>
+                Ubyte’s <span className="text-indigo-500">Informative</span>
                 <br />
                 FAQ Section
               </h2>
@@ -155,7 +155,7 @@ const Question: React.FC = () => {
             <div className="relative z-10 grid items-center gap-10 lg:grid-cols-2">
               {/* Left */}
               <div className="max-w-xl">
-                <span className="inline-flex rounded-full bg-[#14F0C9] px-4 py-2 text-xs font-semibold tracking-widest text-white">
+                <span className="inline-flex rounded-full bg-indigo-900 px-4 py-2 text-xs font-semibold tracking-widest text-white">
                   CONTACT US
                 </span>
 
@@ -172,7 +172,7 @@ const Question: React.FC = () => {
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                   <button
                     onClick={() => navigate("/contact-us")}
-                    className="rounded-xl bg-[#14F0C9] px-6 py-3 text-sm font-semibold text-white hover:brightness-95"
+                    className="rounded-xl bg-indigo-900 px-6 py-3 text-sm font-semibold text-white hover:brightness-95"
                   >
                     Get In Touch
                   </button>

@@ -10,6 +10,7 @@ import ecommerceImg from "../../assets/webimg3.png";
 const WebsiteDevelopment: React.FC = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+    document.title = "Web Development Services -UByte Solution";
   }, []);
 
   type WebsiteTypeCard = {
@@ -89,20 +90,28 @@ const WebsiteDevelopment: React.FC = () => {
 
   const process = [
     {
-      title: "1️⃣ Planning",
-      desc: "Understanding your goals and defining a clear project roadmap.",
+      title: "Reserch",
+      desc: "Idea, Consultant, Research, Goal Defination & Requirement Gathering",
     },
     {
-      title: "2️⃣ Design",
-      desc: "Crafting intuitive, user-centered, and visually stunning designs.",
+      title: " Design",
+      desc: "System Architecture Design, Wireframing, UI/UX Designing & Prototyping",
     },
     {
-      title: "3️⃣ Development",
+      title: " Development",
       desc: "Building responsive, scalable, and optimized websites.",
     },
     {
-      title: "4️⃣ Launch & Support",
-      desc: "Ensuring a flawless launch with ongoing optimization.",
+      title: "Testing",
+      desc: "Quality Assurance, Trouble shooting & Testing",
+    },
+    {
+      title: "Deployment",
+      desc: "Live & Beta Live",
+    },
+    {
+      title: "Maintenence",
+      desc: "Monitoring, Feedback, Analysis & Complete Support",
     },
   ];
 
@@ -145,9 +154,8 @@ const WebsiteDevelopment: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.1 }}
           >
-            We turn your ideas into modern, fast, and responsive websites. Our
-            team blends creativity with clean engineering so your brand looks
-            premium and performs great.
+            We bring revolution to reality. Transforming your custom business
+            ideas into an innovative next-gen web app in our forte.
           </motion.p>
         </div>
 

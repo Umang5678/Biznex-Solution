@@ -9,6 +9,7 @@ import seoHeroImg from "../../../src/assets/seo11.png";
 import seoAgencyImg from "../../../src/assets/seo12.png";
 import seoTopImg from "../../../src/assets/seobedge.png"; // apni image ka path
 import Footer from "../../Components/Footer/Footer";
+import { motion } from "framer-motion";
 
 const reasons = [
   "Result-driven SEO strategies and proven ranking improvements",
@@ -30,7 +31,7 @@ const sections = [
     img: seoHeroImg,
   },
   {
-    title: "Biznex Solution - A Full-Service SEO Agency India",
+    title: "Ubyte Solution - A Full-Service SEO Agency India",
     desc: "When people search online, they trust top results. SEO helps your business appear at the right time for the right audience. It reduces dependency on paid ads and builds sustainable growth by continuously bringing traffic and enquiries.",
     bullets: [
       "Long-term growth with low cost per lead",
@@ -54,13 +55,79 @@ const services = [
 const SeoOptimizationPage: React.FC = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+    document.title = "SEO Services -UByte Solution";
   }, []);
   return (
     <>
+      {/* 🌟 HERO */}
+      <section className="relative overflow-hidden">
+        {/* Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-pink-50 via-white to-cyan-50" />
+        <div className="pointer-events-none absolute -top-24 -left-24 h-80 w-80 rounded-full bg-indigo-200/50 blur-3xl" />
+        <div className="pointer-events-none absolute top-20 -right-24 h-96 w-96 rounded-full bg-cyan-200/50 blur-3xl" />
+        <div className="pointer-events-none absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-fuchsia-200/30 blur-3xl" />
+
+        <div className="relative mx-auto flex min-h-[78vh] max-w-7xl flex-col items-center justify-center px-4 py-20 text-center sm:px-6 lg:px-8">
+          <motion.p
+            className="text-xs font-semibold tracking-widest text-indigo-500"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            Crafting Your Digital Presence
+          </motion.p>
+
+          <motion.h1
+            className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-5xl"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9 }}
+          >
+            Driving Organic Growth through
+            <span className="block">
+              <span className="text-indigo-500">SEO Optimization</span> that
+              Delivers Results
+            </span>
+          </motion.h1>
+
+          <motion.p
+            className="mt-5 max-w-2xl text-sm leading-relaxed text-slate-600 sm:text-base"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.1 }}
+          >
+            We help brands grow faster with data-driven SEO strategies.
+          </motion.p>
+        </div>
+
+        {/* Bottom wave */}
+        <svg
+          className="absolute bottom-0 left-0 w-full"
+          viewBox="0 0 1440 200"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 110C160 160 320 180 480 140C640 100 800 0 960 40C1120 80 1280 180 1440 130V200H0V110Z"
+            fill="white"
+          />
+          <path
+            d="M0 120C180 40 360 30 540 90C720 150 900 190 1080 120C1260 50 1350 60 1440 90"
+            stroke="rgba(79, 70, 229, 0.75)"
+            strokeWidth="4"
+            fill="none"
+          />
+          <path
+            d="M0 140C180 80 360 70 540 110C720 150 900 170 1080 130C1260 90 1350 95 1440 110"
+            stroke="rgba(99, 102, 241, 0.35)"
+            strokeWidth="2"
+            fill="none"
+          />
+        </svg>
+      </section>
       <section className="relative overflow-hidden bg-white">
         {/* Primary blur background (light mode) */}
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute -top-24 -left-24 h-80 w-80 rounded-full bg-indigo-300/45 blur-3xl" />
           <div className="absolute top-40 -right-24 h-96 w-96 rounded-full bg-cyan-300/45 blur-3xl" />
           <div className="absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-fuchsia-200/35 blur-3xl" />
         </div>
@@ -96,13 +163,7 @@ const SeoOptimizationPage: React.FC = () => {
                   href="#contact"
                   className="inline-flex items-center justify-center rounded-2xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-800"
                 >
-                  Get SEO Audit
-                </a>
-                <a
-                  href="#content"
-                  className="inline-flex items-center justify-center rounded-2xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50"
-                >
-                  Learn More
+                  INQUIRY NOW
                 </a>
               </div>
             </div>

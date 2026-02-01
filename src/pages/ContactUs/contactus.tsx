@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 
 type FormState = {
   name: string;
@@ -21,6 +22,7 @@ const initialState: FormState = {
 const ContactUs: React.FC = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+    document.title = "Contact Us | UByte Solution";
   }, []);
 
   const [form, setForm] = useState<FormState>(initialState);
@@ -65,123 +67,165 @@ const ContactUs: React.FC = () => {
   };
 
   return (
-    <section className="min-h-screen bg-gray-200  px-4 py-16 flex items-center justify-center">
-      <div className="w-full max-w-4xl">
-        {/* Header */}
-        <div className="text-center mb-10">
-          <h2 className="text-4xl font-bold text-gray-900">Get In Touch</h2>
-          <p className="mt-3 text-gray-600 max-w-2xl mx-auto">
-            Send us your questions or concerns and we’ll get back to you
-            shortly.
+    <section className="min-h-screen bg-white px-4 py-20">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        {/* LEFT CONTENT */}
+        <div>
+          <span className="text-sm font-semibold text-indigo-600 tracking-wide">
+            NEED ANY HELP?
+          </span>
+
+          <h1 className="mt-3 text-5xl font-bold text-gray-900 leading-tight">
+            Get in touch <br /> with us
+          </h1>
+
+          <p className="mt-6 text-gray-600 max-w-md">
+            We’re here to help! Whether you have questions, need more
+            information, or are ready to start your project — feel free to
+            contact us anytime.
           </p>
-        </div>
 
-        {/* Card */}
-        <div className="rounded-xl border border-gray-200 bg-white p-6 md:p-8 shadow-sm">
-          <form onSubmit={handleSubmit} className="space-y-5">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-              {/* Name */}
-              <div>
-                <label className="text-sm font-medium text-gray-700">
-                  Your Name
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  value={form.name}
-                  onChange={handleChange}
-                  required
-                  className="mt-1 w-full h-11 rounded-lg border border-gray-300 px-3 text-gray-900 outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
-                />
+          {/* Info List */}
+          <div className="mt-12 space-y-8">
+            {/* Phone */}
+            <div className="group flex items-center gap-5">
+              <div
+                className="
+      h-12 w-12 rounded-full 
+      bg-indigo-50 
+      flex items-center justify-center 
+      text-indigo-600
+      transition-all duration-300
+      group-hover:bg-indigo-100
+      group-hover:scale-110
+      group-hover:shadow-md
+    "
+              >
+                <FaPhoneAlt className="text-lg" />
               </div>
-
-              {/* Phone */}
               <div>
-                <label className="text-sm font-medium text-gray-700">
-                  Contact Number
-                </label>
-                <input
-                  type="tel"
-                  name="phone"
-                  value={form.phone}
-                  onChange={handleChange}
-                  required
-                  className="mt-1 w-full h-11 rounded-lg border border-gray-300 px-3 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
-                />
-              </div>
-
-              {/* Email */}
-              <div>
-                <label className="text-sm font-medium text-gray-700">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  value={form.email}
-                  onChange={handleChange}
-                  required
-                  className="mt-1 w-full h-11 rounded-lg border border-gray-300 px-3 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
-                />
-              </div>
-
-              {/* City */}
-              <div>
-                <label className="text-sm font-medium text-gray-700">
-                  City
-                </label>
-                <input
-                  type="text"
-                  name="city"
-                  value={form.city}
-                  onChange={handleChange}
-                  required
-                  className="mt-1 w-full h-11 rounded-lg border border-gray-300 px-3 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
-                />
-              </div>
-
-              {/* Country */}
-              <div className="md:col-span-2">
-                <label className="text-sm font-medium text-gray-700">
-                  Country
-                </label>
-                <input
-                  type="text"
-                  name="country"
-                  value={form.country}
-                  onChange={handleChange}
-                  required
-                  className="mt-1 w-full h-11 rounded-lg border border-gray-300 px-3 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
-                />
+                <p className="font-semibold text-gray-900 transition group-hover:text-indigo-600">
+                  Have any question?
+                </p>
+                <p className="text-gray-600 transition group-hover:text-gray-800">
+                  +91 98700 97179
+                </p>
               </div>
             </div>
 
-            {/* Comments */}
-            <div>
-              <label className="text-sm font-medium text-gray-700">
-                Comments
-              </label>
-              <textarea
-                name="comments"
-                value={form.comments}
+            {/* Email */}
+            <div className="group flex items-center gap-5">
+              <div
+                className="
+      h-12 w-12 rounded-full 
+      bg-indigo-50 
+      flex items-center justify-center 
+      text-indigo-600
+      transition-all duration-300
+      group-hover:bg-indigo-100
+      group-hover:scale-110
+      group-hover:shadow-md
+    "
+              >
+                <FaEnvelope className="text-lg" />
+              </div>
+              <div>
+                <p className="font-semibold text-gray-900 transition group-hover:text-indigo-600">
+                  Write email
+                </p>
+                <p className="text-gray-600 transition group-hover:text-gray-800">
+                  support@kndigitech.com
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* RIGHT FORM */}
+        <div className="relative">
+          {/* subtle background blur */}
+          <div className="absolute -inset-4 bg-indigo-50 rounded-3xl blur-2xl opacity-50"></div>
+
+          <form
+            onSubmit={handleSubmit}
+            className="relative bg-white rounded-2xl p-8 shadow-[0_20px_50px_rgba(0,0,0,0.08)] space-y-5"
+          >
+            <h2 className="text-3xl font-bold text-gray-900">
+              Feel free to write
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <input
+                type="text"
+                name="name"
+                placeholder="Your name"
+                value={form.name}
                 onChange={handleChange}
-                rows={5}
                 required
-                className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
+                className="h-12 rounded-lg bg-gray-100 px-4 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              />
+
+              <input
+                type="email"
+                name="email"
+                placeholder="Email address"
+                value={form.email}
+                onChange={handleChange}
+                required
+                className="h-12 rounded-lg bg-gray-100 px-4 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              />
+
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Phone number"
+                value={form.phone}
+                onChange={handleChange}
+                required
+                className="h-12 rounded-lg bg-gray-100 px-4 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              />
+
+              <input
+                type="text"
+                name="city"
+                placeholder="City"
+                value={form.city}
+                onChange={handleChange}
+                required
+                className="h-12 rounded-lg bg-gray-100 px-4 focus:outline-none focus:ring-2 focus:ring-indigo-500"
               />
             </div>
 
-            {/* Button */}
+            <input
+              type="text"
+              name="country"
+              placeholder="Country"
+              value={form.country}
+              onChange={handleChange}
+              required
+              className="w-full h-12 rounded-lg bg-gray-100 px-4 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            />
+
+            <textarea
+              name="comments"
+              placeholder="Your message"
+              rows={5}
+              value={form.comments}
+              onChange={handleChange}
+              required
+              className="w-full rounded-lg bg-gray-100 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            />
+
             <button
               type="submit"
-              className="w-full h-11 rounded-lg bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition"
+              className="w-full h-12 rounded-lg bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition"
             >
-              send message
+              Send Message
             </button>
 
             {submitted && (
-              <p className="text-center text-sm text-green-600 font-medium">
-                ✅ Thanks! Your message has been sent.
+              <p className="text-center text-green-600 font-medium">
+                ✅ Message sent successfully
               </p>
             )}
           </form>

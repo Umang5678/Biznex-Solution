@@ -160,9 +160,9 @@ const UiUxDesignPage: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9 }}
           >
-            Painting Your Ideas into Stunning
+            Designing Intuitive Experiences with
             <span className="block">
-              <span className="text-indigo-500">Web Development</span> for
+              <span className="text-indigo-500">UI & UX Design</span> for
               Digital Excellence
             </span>
           </motion.h1>
@@ -173,9 +173,7 @@ const UiUxDesignPage: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.1 }}
           >
-            We turn your ideas into modern, fast, and responsive websites. Our
-            team blends creativity with clean engineering so your brand looks
-            premium and performs great.
+            We Help Real Brands Create Unreal Experience
           </motion.p>
         </div>
 

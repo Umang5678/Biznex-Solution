@@ -120,6 +120,7 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import logo from "../../assets/u-logo.png";
+import footerBg from "../../assets/f4.png";
 
 type LinkItem = { label: string; href: string };
 
@@ -153,7 +154,15 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative mt-16 overflow-hidden bg-[#070A12] text-slate-200">
+    <footer
+      className="relative mt-16 overflow-hidden text-slate-200"
+      style={{
+        backgroundImage: `url(${footerBg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       <div className="relative mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         {/* Top */}
         <div className="grid gap-10 lg:grid-cols-12">

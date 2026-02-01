@@ -84,6 +84,7 @@ export default function WorkPage() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+    document.title = "Our Work | UByte Solution";
   }, []);
 
   return (

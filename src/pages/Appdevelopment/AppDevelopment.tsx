@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import heroAppImg from "../../../src/assets/app1.png";
 import appDevImg from "../../../src/assets/seo11.png";
-import appDevImg1 from "../../../src/assets/mob3.png";
+// import appDevImg1 from "../../../src/assets/mob3.png";
 import Footer from "../../Components/Footer/Footer";
+import { motion } from "framer-motion";
 
 const services = [
   {
@@ -38,11 +39,11 @@ const services = [
 ];
 const infoSections = [
   {
-    heading: "India's Leading App Development Company",
-    desc: "Biznex Solution is a leading mobile app development company in Ahmedabad specialized in delivering complex and multi-functional mobile apps without any compromise on user interface. We are a team of professional and skilled app developers who are highly passionate and actively engaged in consumer and enterprise level mobile apps. High reliability is our trademark and each development work is carried out with proper planning and through transparent process.",
+    heading: "Build, Launch & Grow with Expert App Development",
+    desc: "Our mobile team builds mobile apps for every user, every platform, and every industry. No matter under which niche your project falls, with the help of our experienced mobile app developers, we can deliver you with robust mobile application solutions. Ubyte Solution holds the best resources with a rare combination of rich industry experience and unparalleled expertise to develop native Android, iOS, and Cross-platform mobile apps..",
     subTitle: "Apps that Create Great Customer Experiences",
     subDesc:
-      "Biznex Solution is acclaimed for innovative and creative ideas in mobile application development. We develop apps that provide users with new opportunities, increase availability and utilize innovative technologies across devices. Apps are highly necessary for you to increase your workflow, increase orders and thereby increase productivity and revenue.",
+      "Ubyte Solution is acclaimed for innovative and creative ideas in mobile application development. We develop apps that provide users with new opportunities, increase availability and utilize innovative technologies across devices. Apps are highly necessary for you to increase your workflow, increase orders and thereby increase productivity and revenue.",
     img: heroAppImg,
     reverse: false,
   },
@@ -56,49 +57,41 @@ const infoSections = [
   },
 ];
 
-const steps = [
+const process = [
   {
-    step: "01",
-    title: "Discovery",
-    desc: "Scope, requirements, estimates, roadmap.",
+    title: "Reserch",
+    desc: "Idea, Consultant, Research, Goal Defination & Requirement Gathering",
   },
   {
-    step: "02",
-    title: "Design",
-    desc: "Wireframes → UI screens → prototype approval.",
+    title: " Design",
+    desc: "System Architecture Design, Wireframing, UI/UX Designing & Prototyping",
   },
   {
-    step: "03",
-    title: "Development",
-    desc: "Agile sprints with weekly demos & updates.",
+    title: " Development",
+    desc: "Building responsive, scalable, and optimized websites.",
   },
   {
-    step: "04",
-    title: "QA & Launch",
-    desc: "Testing, performance checks, store deployment.",
+    title: "Testing",
+    desc: "Quality Assurance, Trouble shooting & Testing",
   },
-];
-
-const tech = [
-  "React Native",
-  "Flutter",
-  "Kotlin",
-  "Swift",
-  "Firebase",
-  "REST / GraphQL",
-  "Push Notifications",
-  "Payments (UPI/Card)",
-  "Crash Reporting",
-  "CI/CD",
+  {
+    title: "Deployment",
+    desc: "Live & Beta Live",
+  },
+  {
+    title: "Maintenence",
+    desc: "Monitoring, Feedback, Analysis & Complete Support",
+  },
 ];
 
 const MobileDevelopmentPage: React.FC = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+    document.title = "App Development Services -UByte Solution";
   }, []);
   return (
     <>
-      <section className="relative overflow-hidden bg-white">
+      <section className="relative  bg-white">
         {/* Primary blur background (light mode) */}
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute -top-24 -left-24 h-80 w-80 rounded-full bg-indigo-300/50 blur-3xl" />
@@ -106,76 +99,66 @@ const MobileDevelopmentPage: React.FC = () => {
           <div className="absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-fuchsia-200/40 blur-3xl" />
         </div>
 
-        <div className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-          {/* HERO */}
-          <div className="grid items-center gap-10 lg:grid-cols-2">
-            {/* LEFT CONTENT */}
-            <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs text-slate-700 shadow-sm backdrop-blur">
-                <span className="h-2 w-2 rounded-full bg-indigo-600" />
-                Mobile App Development • Android • iOS • Cross-Platform
-              </div>
+        <section className="relative overflow-hidden">
+          <div className="relative mx-auto flex min-h-[78vh] max-w-7xl flex-col items-center justify-center px-4 py-20 text-center sm:px-6 lg:px-8">
+            <motion.p
+              className="text-xs font-semibold tracking-widest text-indigo-500"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              Crafting Your Digital Presence
+            </motion.p>
 
-              <h1 className="mt-5 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
-                Mobile apps that feel{" "}
-                <span className="bg-gradient-to-r from-indigo-700 via-slate-900 to-slate-700 bg-clip-text text-transparent">
-                  fast, modern, and premium
-                </span>
-              </h1>
+            <motion.h1
+              className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-5xl"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9 }}
+            >
+              Building Native & Cross Platform
+              <span className="block">
+                <span className="text-indigo-500">Moblie Application</span> for
+                Digital Excellence
+              </span>
+            </motion.h1>
 
-              <p className="mt-4 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
-                We build production-ready mobile apps with clean UI, strong
-                architecture, secure APIs, and store-ready deployments —
-                designed for growth.
-              </p>
-
-              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-                <a
-                  href="#contact"
-                  className="inline-flex items-center justify-center rounded-2xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-800"
-                >
-                  Get Free Consultation
-                </a>
-
-                <a
-                  href="#services"
-                  className="inline-flex items-center justify-center rounded-2xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50"
-                >
-                  View Services
-                </a>
-              </div>
-
-              <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
-                {[
-                  { k: "Fast Delivery", v: "Agile sprints" },
-                  { k: "Clean UI", v: "Modern look" },
-                  { k: "Secure", v: "Best practices" },
-                  { k: "Scalable", v: "Future-ready" },
-                ].map((x) => (
-                  <div
-                    key={x.k}
-                    className="rounded-2xl border border-slate-200 bg-white/80 p-4 shadow-sm backdrop-blur"
-                  >
-                    <p className="text-sm font-semibold text-slate-900">
-                      {x.k}
-                    </p>
-                    <p className="mt-1 text-xs text-slate-500">{x.v}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* ✅ RIGHT IMAGE (replaces HERO CARD) */}
-            <div className="flex justify-center lg:justify-end">
-              <img
-                src={appDevImg1} // or heroAppImg
-                alt="Mobile App Development"
-                className="w-full max-w-2xl object-contain"
-                loading="lazy"
-              />
-            </div>
+            <motion.p
+              className="mt-5 max-w-2xl text-sm leading-relaxed text-slate-600 sm:text-base"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.1 }}
+            >
+              We bring revolution to reality. Transforming your custom business
+              ideas into an innovative next-gen web app in our forte.
+            </motion.p>
           </div>
-
+          {/* Bottom wave */}s
+          <svg
+            className="absolute bottom-0 left-0 w-full"
+            viewBox="0 0 1440 200"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 110C160 160 320 180 480 140C640 100 800 0 960 40C1120 80 1280 180 1440 130V200H0V110Z"
+              fill="white"
+            />
+            <path
+              d="M0 120C180 40 360 30 540 90C720 150 900 190 1080 120C1260 50 1350 60 1440 90"
+              stroke="rgba(79, 70, 229, 0.75)"
+              strokeWidth="4"
+              fill="none"
+            />
+            <path
+              d="M0 140C180 80 360 70 540 110C720 150 900 170 1080 130C1260 90 1350 95 1440 110"
+              stroke="rgba(99, 102, 241, 0.35)"
+              strokeWidth="2"
+              fill="none"
+            />
+          </svg>
+        </section>
+        <div className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
           {/* ✅ Screenshot-like Two Blocks (Text + Image) */}
           <div className="mt-14 space-y-14">
             {infoSections.map((sec) => (
@@ -259,57 +242,36 @@ const MobileDevelopmentPage: React.FC = () => {
             </div>
           </div>
 
-          {/* PROCESS */}
-          <div className="mt-14">
-            <div className="rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm backdrop-blur sm:p-10">
-              <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">
-                Our Process
-              </h2>
-              <p className="mt-2 max-w-2xl text-sm text-slate-600">
-                Transparent steps from idea to launch — optimized for quality
-                and speed.
-              </p>
+          {/* ⚙️ PROCESS */}
 
-              <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-                {steps.map((p) => (
-                  <div
-                    key={p.step}
-                    className="rounded-3xl border border-slate-200 bg-slate-50 p-6"
-                  >
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm font-semibold text-indigo-700">
-                        {p.step}
-                      </span>
-                      <span className="h-10 w-10 rounded-2xl border border-slate-200 bg-white" />
-                    </div>
-                    <p className="mt-4 text-base font-semibold text-slate-900">
-                      {p.title}
-                    </p>
-                    <p className="mt-2 text-sm text-slate-600">{p.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+          <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+            <motion.h2
+              className="text-center text-2xl font-extrabold text-slate-900 sm:text-3xl"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              Our <span className="text-indigo-600">Development Process</span>
+            </motion.h2>
 
-          {/* TECH STACK */}
-          <div className="mt-14">
-            <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">
-              Tech Stack
-            </h2>
-            <p className="mt-2 max-w-2xl text-sm text-slate-600">
-              We choose the right technology based on performance, budget, and
-              timeline.
-            </p>
-
-            <div className="mt-6 flex flex-wrap gap-3">
-              {tech.map((t) => (
-                <span
-                  key={t}
-                  className="rounded-full border border-slate-200 bg-white/90 px-4 py-2 text-sm text-slate-800 shadow-sm backdrop-blur hover:bg-slate-50 transition"
+            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {process.map((step, index) => (
+                <motion.div
+                  key={step.title}
+                  className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.7, delay: index * 0.1 }}
+                  viewport={{ once: true }}
                 >
-                  {t}
-                </span>
+                  <h3 className="text-base font-semibold text-slate-900">
+                    {step.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                    {step.desc}
+                  </p>
+                </motion.div>
               ))}
             </div>
           </div>

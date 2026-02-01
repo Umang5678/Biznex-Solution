@@ -21,9 +21,9 @@ const ServicesPage = () => {
   const detailedServices = [
     {
       title: "Web Design & Development",
-      text: `Web development & Website Development is the process of designing and creating websites for the Internet... Additionally, web developers must consider aspects such as web accessibility, search engine optimization (SEO), and website security when building a website.
+      text: `We bring revolution to reality. Transforming your custom business ideas into an innovative next-gen web app in our forte.
       
-         Web development & Website Development is the process of designing and creating websites for the Internet... Additionally, web developers must consider aspects such as web accessibility, search engine optimization (SEO), and website security when building a website.`,
+        With experience in web application development services, Ubyte Solution development team has enough expertise to embody even the most daring ideas into perfect web apps. Our outsourcing team does not just create custom web applications but also solves your business problems. We are ever ready to meet your high expectations and quality standards, find solutions for your business tasks, and offer future product evolution opportunities.`,
       animation:
         "https://lottie.host/30e7511a-690d-4e61-adfc-d7c3d1fef1e8/GT0gLcE1Rm.lottie",
       reverse: true,
@@ -32,7 +32,7 @@ const ServicesPage = () => {
     },
     {
       title: "Mobile App Development",
-      text: `Mobile app development Company refers to the process of creating software applications that run on mobile devices such as smartphones and tablets. Mobile app development involves several stages, including concept, design, development, testing, deployment, and maintenance.`,
+      text: `Our mobile team builds mobile apps for every user, every platform, and every industry. No matter under which niche your project falls, with the help of our experienced mobile app developers, we can deliver you with robust mobile application solutions.We focus on innovation, performance, and security, ensuring that your mobile app delivers a seamless user experience while achieving your business objectives. From concept to deployment, we provide end-to-end mobile app development solutions that drive real results.`,
       animation:
         "https://lottie.host/2f67af33-6fb7-416f-9f63-ab635e80709a/kOPGv7hXdR.lottie",
       reverse: false,
@@ -40,8 +40,10 @@ const ServicesPage = () => {
       link: "/app-development",
     },
     {
-      title: "Logo Design & Graphic Design",
-      text: `At every online touchpoint with your brand, we blend innovation, aesthetics, and outstanding user experiences to inspire loyalty in your customers.`,
+      title: "UI/UX Design",
+      text: `Utilizing creative, technology and strategy, we are a multi-disciplinary digital product design
+
+We will design every aspect of your website. Based on your personal feel and business needs we will select the right template for you. These templates are designed by highly experienced and expensive designers.`,
       animation:
         "https://lottie.host/11038d3d-2193-4cfd-bc31-736d092abfba/kIcnaoYRN8.lottie",
       reverse: true,
@@ -50,7 +52,7 @@ const ServicesPage = () => {
     },
     {
       title: "SEO & Digital Marketing Services",
-      text: `SEO (Search Engine Optimization) digital marketing services refer to the strategies and tactics used to improve the visibility and ranking of a website on search engine results pages (SERPs).`,
+      text: `In today’s digital world, ranking high on search engines is essential for business success. At Ubyte Solution, we provide expert SEO (Search Engine Optimization) services to help businesses increase their online visibility, attract more customers, and grow their revenue. Our SEO strategies are designed to improve your website’s ranking on Google and other search engines, ensuring that your business stays ahead of the competition.`,
       animation:
         "https://lottie.host/63eeee65-0caf-4b54-9d3a-25c9ba584e1f/AEClhiCC1t.lottie",
       reverse: false,
@@ -61,6 +63,7 @@ const ServicesPage = () => {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+    document.title = "Services | UByte Solution";
   }, []);
 
   return (
@@ -92,7 +95,7 @@ const ServicesPage = () => {
           >
             <h3 className="text-xl font-bold text-slate-900 sm:text-2xl">
               Why you should choose{" "}
-              <span className="text-indigo-600">Biznex Solution</span>
+              <span className="text-indigo-600">Ubyte Solution</span>
             </h3>
 
             <div className="mt-6 grid gap-6 md:grid-cols-3">
@@ -124,8 +127,11 @@ const ServicesPage = () => {
               ))}
             </div>
 
-            <button className="mt-8 rounded-2xl bg-slate-900 px-6 py-3 text-sm font-semibold text-white hover:bg-slate-800">
-              LET’S MEET
+            <button
+              onClick={() => navigate("/contact-us")}
+              className="mt-8 rounded-2xl bg-slate-900 px-6 py-3 text-sm font-semibold text-white hover:bg-slate-800"
+            >
+              INQUIRY NOW
             </button>
           </motion.section>
 
